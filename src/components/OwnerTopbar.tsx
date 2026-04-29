@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import { Bell, Search, RefreshCw, Download, ChevronDown } from 'lucide-react';
+import { Search, RefreshCw, Download, ChevronDown } from 'lucide-react';
+import OwnerNotificationPanel from './OwnerNotificationPanel';
 
 interface OwnerTopbarProps {
   sidebarCollapsed: boolean;
@@ -55,10 +56,7 @@ export default function OwnerTopbar({ sidebarCollapsed, title, subtitle }: Owner
         </button>
 
         {/* Notifications */}
-        <button className="relative p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-slate-700 transition-colors" aria-label="Notifications">
-          <Bell size={18} />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
-        </button>
+        <OwnerNotificationPanel />
       </div>
     </header>
   );
